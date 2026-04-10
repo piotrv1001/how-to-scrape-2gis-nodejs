@@ -2,6 +2,8 @@
 
 This example shows how to extract business listings from [2GIS](https://2gis.com) using the [Apify 2GIS Scraper](https://apify.com/piotrv1001/2gis-scraper) actor — no browser automation or HTML parsing required. The actor handles the scraping; this repo shows you how to call it from Node.js, pass input, and work with the results.
 
+![2GIS scraper results showing business listings with name, address, categories, rating, reviews, city, and URL columns](./2gis_results.png)
+
 ## What this example does
 
 - Calls the `piotrv1001/2gis-scraper` Apify actor with a start URL
