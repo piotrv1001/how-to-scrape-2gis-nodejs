@@ -1,112 +1,76 @@
 # How to Scrape 2GIS in Node.js
 
-This example shows how to extract business listings from [2GIS](https://2gis.com) using the [Apify 2GIS Scraper](https://apify.com/piotrv1001/2gis-scraper) actor — no browser automation or HTML parsing required. The actor handles the scraping; this repo shows you how to call it from Node.js, pass input, and work with the results.
+This example calls our [2GIS Places Scraper](https://apify.com/piotrv1001/2gis-scraper) on Apify from Node.js to build a local lead list. Give it a business type and a city, and it returns each place's address, rating and category, plus the **phones, emails, websites and WhatsApp, Telegram and Instagram links** the business lists on 2GIS. The script prints how many places have each contact type and saves an outreach sheet, `leads.csv`.
 
-![2GIS scraper results showing business listings with name, address, categories, rating, reviews, city, and URL columns](./2gis_results.png)
+No browser automation, HTML parsing or 2GIS account needed.
 
-## What this example does
-
-- Calls the `piotrv1001/2gis-scraper` Apify actor with a start URL
-- Waits for the run to complete
-- Fetches results from the actor's dataset
-- Prints each business listing to the console
+![2GIS scraper results in the Apify dataset view (earlier version, before contact fields)](./2gis_results.png)
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) v18 or higher
-- An [Apify account](https://console.apify.com/sign-up)
-- An [Apify API token](https://console.apify.com/settings/integrations)
+- [Node.js](https://nodejs.org/) 18 or newer
+- An [Apify account](https://console.apify.com/sign-up) and its [API token](https://console.apify.com/settings/integrations)
 
-## Installation
+## Setup
 
 ```bash
 npm install
-```
-
-## Environment setup
-
-Copy `.env.example` to `.env` and add your Apify API token:
-
-```bash
-cp .env.example .env
-```
-
-Then edit `.env`:
-
-```env
-APIFY_TOKEN=your_apify_token_here
+cp .env.example .env   # then put your token in APIFY_TOKEN
 ```
 
 ## Usage
 
 ```bash
-npm start
+npm start                                      # dentists (стоматология) in Almaty, 60 places
+npm start dentist dubai ae 50                  # keyword, city, 2GIS domain, max places
+npm start "автосервис" tashkent uz 100
 ```
 
-## Code example
+`city` is the slug from the city's 2GIS URL. The domain (`country`) is one of `ae`, `ru`, `kz`, `uz`, `kg`, `az`, `com.cy`. Search in the language locals use.
+
+Output of `npm start стоматология almaty kz 24`:
+
+```
+24 places for "стоматология" in almaty
+│ phone     │ 24 │
+│ email     │ 9  │
+│ website   │ 10 │
+│ whatsapp  │ 24 │
+│ telegram  │ 1  │
+│ instagram │ 21 │
+Saved 24 rows to leads.csv
+```
+
+`leads.csv` has one row per branch, sorted by review count, with the first phone, email, website, WhatsApp, Telegram and Instagram link in their own columns, plus `orgName` and `branchCount` so you can contact each organization once. It opens correctly in Excel, including Cyrillic and Arabic names.
+
+## The Actor input
 
 ```js
-import { ApifyClient } from 'apify-client';
-import 'dotenv/config';
-
-// Initialize the ApifyClient with your Apify API token
-// Set APIFY_TOKEN in your .env file (copy .env.example to get started)
-const client = new ApifyClient({
-    token: process.env.APIFY_TOKEN,
-});
-
-// Prepare Actor input
-const input = {
-    "startUrls": [
-        {
-            "url": "https://2gis.ae/dubai/search/restaurants"
-        }
-    ]
-};
-
-// Run the Actor and wait for it to finish
-const run = await client.actor("piotrv1001/2gis-scraper").call(input);
-
-// Fetch and print Actor results from the run's dataset (if any)
-console.log('Results from dataset');
-console.log(`💾 Check your data here: https://console.apify.com/storage/datasets/${run.defaultDatasetId}`);
-const { items } = await client.dataset(run.defaultDatasetId).listItems();
-items.forEach((item) => {
-    console.dir(item);
-});
-
-// 📚 Want to learn more 📖? Go to → https://docs.apify.com/api/client/js/docs
+{
+    searchQueries: ['стоматология'],  // or startUrls: [{ url: 'https://2gis.kz/almaty/search/...' }]
+    city: 'almaty',
+    country: 'kz',
+    maxItems: 60,                     // places in the whole run (default 50)
+    includeContacts: true,            // default
+}
 ```
 
-## Example output
+`maxPages` (default 5, about 12 places per page) limits each search. A city that 2GIS doesn't have on that domain fails the run with a clear message instead of returning wrong places.
 
-See [`sample-output.json`](./sample-output.json) for a full example. Each result contains:
+## Output
 
-- `id` — unique 2GIS business identifier
-- `name` / `nameExtension` — business name
-- `address`, `city`, `district` — location details
-- `latitude` / `longitude` — GPS coordinates
-- `categories` — business category list
-- `rating` / `reviewCount` — user rating and review count
-- `schedule` — opening hours by day of week
-- `attributes` — rich metadata (cuisine type, payment methods, services, languages, accessibility, etc.)
-- `photoCount` — number of photos on the listing
-- `branchCount` — number of branches
-- `url` — direct link to the 2GIS listing
-- `searchUrl` — the search URL this result came from
-- `scrapedAt` — timestamp of when the data was collected
+See [`sample-output.json`](./sample-output.json) for two full rows from a real run. Besides `phones`, `emails`, `websites` and `socials`, each place has `name`, `orgName`, `branchCount`, `address`, `city`, `district`, `latitude`/`longitude`, `categories`, `rating`, `reviewCount`, `schedule`, `attributes`, `url` and `scrapedAt`.
 
-## Use cases
+Contacts are what each business lists publicly on 2GIS, so coverage differs by market: in our runs WhatsApp was on almost every Almaty dental clinic, while Telegram was more common in Tashkent. Check the rules on unsolicited messages in the country you're contacting before outreach.
 
-- **Lead generation** — build lists of local businesses (restaurants, hotels, clinics, shops) with contact and location data
-- **Market research** — analyze business density, ratings, and category distribution across cities or districts
-- **Competitor analysis** — track competitor branches, ratings, and service attributes over time
-- **Real estate & location intelligence** — enrich property datasets with nearby business data
-- **Travel & hospitality apps** — power search features with structured POI data from 2GIS-covered regions
+## Cost
 
-## Try the actor on Apify
+Pricing as of September 28, 2026: $0.0018 per place (contacts included), plus a $0.00005 start fee per GB of run memory. The default run of 60 places costs about $0.11. Check [current pricing](https://apify.com/piotrv1001/2gis-scraper/pricing).
 
-**[Open the 2GIS Scraper on Apify](https://apify.com/piotrv1001/2gis-scraper)**
+## Related resources
+
+- [How to Scrape 2GIS Business Listings With Phones and Emails](https://www.falconscrape.com/blog/how-to-scrape-2gis-business-listings): the full guide, including picking the outreach channel per market and mapping a district
+- [2GIS Places Scraper on Apify](https://apify.com/piotrv1001/2gis-scraper)
 
 ## License
 

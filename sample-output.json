@@ -1,136 +1,206 @@
 [
-  {
-    "id": "70000001041258673",
-    "name": "Ce La Vi Dubai, restaurant",
-    "nameExtension": "Ce La Vi Dubai",
-    "address": "Address Sky View Hotel, 133a, Sheikh Zayed road",
-    "buildingName": null,
-    "city": "Dubai",
-    "district": "Burj Khalifa/Downtown Dubai",
-    "latitude": 25.201722,
-    "longitude": 55.270756,
-    "categories": ["Cafe / Restaurants"],
-    "rating": 4.6,
-    "reviewCount": 33,
-    "schedule": {
-      "Fri": [{ "from": "12:00", "to": "03:00" }],
-      "Mon": [{ "from": "12:00", "to": "03:00" }],
-      "Sat": [{ "from": "12:00", "to": "03:00" }],
-      "Sun": [{ "from": "12:00", "to": "03:00" }],
-      "Thu": [{ "from": "12:00", "to": "03:00" }],
-      "Tue": [{ "from": "12:00", "to": "03:00" }],
-      "Wed": [{ "from": "12:00", "to": "03:00" }]
+    {
+        "id": "70000001065539662",
+        "name": "Altyn Dent, центр имплантации зубов",
+        "nameExtension": "Altyn Dent",
+        "address": "улица Мауленова, 120",
+        "buildingName": null,
+        "city": "Алматы",
+        "district": "Алмалинский район",
+        "latitude": 43.242433,
+        "longitude": 76.936221,
+        "categories": [
+            "Частные стоматологии",
+            "Частные детские стоматологии",
+            "Челюстно-лицевой хирург"
+        ],
+        "rating": 4.9,
+        "reviewCount": 166,
+        "schedule": {
+            "Fri": [
+                {
+                    "from": "09:00",
+                    "to": "22:00"
+                }
+            ],
+            "Mon": [
+                {
+                    "from": "09:00",
+                    "to": "22:00"
+                }
+            ],
+            "Sat": [
+                {
+                    "from": "09:00",
+                    "to": "22:00"
+                }
+            ],
+            "Sun": [
+                {
+                    "from": "09:00",
+                    "to": "22:00"
+                }
+            ],
+            "Thu": [
+                {
+                    "from": "09:00",
+                    "to": "22:00"
+                }
+            ],
+            "Tue": [
+                {
+                    "from": "09:00",
+                    "to": "22:00"
+                }
+            ],
+            "Wed": [
+                {
+                    "from": "09:00",
+                    "to": "22:00"
+                }
+            ]
+        },
+        "attributes": {
+            "Стоматологические услуги": [
+                "Взрослый стоматолог-хирург",
+                "Взрослый ортодонт",
+                "Взрослый стоматолог-ортопед",
+                "Имплантация",
+                "Взрослый пародонтолог",
+                "Детский стоматолог-терапевт",
+                "Детский ортодонт",
+                "Детский стоматолог-хирург",
+                "КТ зубов",
+                "ОПТГ",
+                "Прицельный снимок зуба",
+                "Бесплатная консультация",
+                "Неотложка для взрослых",
+                "Неотложка для детей"
+            ],
+            "Способы оплаты": [
+                "Оплата картой",
+                "Наличный расчёт",
+                "Оплата через банк",
+                "Перевод с карты",
+                "Оплата по QR-коду"
+            ]
+        },
+        "photoCount": null,
+        "orgName": "Altyn Dent, центр имплантации зубов",
+        "branchCount": 1,
+        "url": "https://2gis.kz/almaty/firm/70000001065539662",
+        "searchUrl": "https://2gis.kz/almaty/search/%D1%81%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F",
+        "scrapedAt": "2026-09-28T10:53:11.842Z",
+        "phones": [
+            "+77479207571"
+        ],
+        "emails": [],
+        "websites": [],
+        "socials": {
+            "instagram": [
+                "https://instagram.com/dr.mukhit_altynbekovich"
+            ],
+            "whatsapp": [
+                "https://wa.me/77479207571"
+            ]
+        }
     },
-    "attributes": {
-      "Restaurants / Café": [
-        "Average bill 180 AED",
-        "Asian cuisine",
-        "Vegeterian menu",
-        "Desserts",
-        "Alcohol menu",
-        "Live music",
-        "Restaurants with a View",
-        "Valet Parking",
-        "Outdoor sitting area",
-        "Brunch",
-        "Brunch hours 13:00-16:00",
-        "Brunch price 290–690 AED",
-        "Seating capacity 150 people"
-      ],
-      "Assortment": ["Fresh juice"],
-      "Payment by credit cards": ["Wi-Fi"],
-      "Payment methods": ["Payment by credit cards", "Cash payment"],
-      "Service Language": ["English", "Tagalog", "French", "Russian"],
-      "Wheelchair Accessible": ["Entrance for handicapped people"]
-    },
-    "photoCount": null,
-    "orgName": "Ce La Vi Dubai, restaurant",
-    "branchCount": 1,
-    "url": "https://2gis.ae/dubai/firm/70000001041258673",
-    "searchUrl": "https://2gis.ae/dubai/search/restaurants",
-    "scrapedAt": "2026-02-07T15:21:19.853Z"
-  },
-  {
-    "id": "70000001098374512",
-    "name": "Nobu Dubai, restaurant",
-    "nameExtension": "Nobu Dubai",
-    "address": "Atlantis The Palm, Crescent Rd",
-    "buildingName": "Atlantis The Palm",
-    "city": "Dubai",
-    "district": "Palm Jumeirah",
-    "latitude": 25.130286,
-    "longitude": 55.117057,
-    "categories": ["Cafe / Restaurants"],
-    "rating": 4.8,
-    "reviewCount": 217,
-    "schedule": {
-      "Fri": [{ "from": "12:30", "to": "00:00" }],
-      "Mon": [{ "from": "12:30", "to": "23:30" }],
-      "Sat": [{ "from": "12:30", "to": "00:00" }],
-      "Sun": [{ "from": "12:30", "to": "23:30" }],
-      "Thu": [{ "from": "12:30", "to": "23:30" }],
-      "Tue": [{ "from": "12:30", "to": "23:30" }],
-      "Wed": [{ "from": "12:30", "to": "23:30" }]
-    },
-    "attributes": {
-      "Restaurants / Café": [
-        "Average bill 350 AED",
-        "Japanese cuisine",
-        "Vegeterian menu",
-        "Alcohol menu",
-        "Valet Parking",
-        "Outdoor sitting area",
-        "Seating capacity 220 people"
-      ],
-      "Payment methods": ["Payment by credit cards", "Cash payment"],
-      "Service Language": ["English", "Arabic", "Japanese"]
-    },
-    "photoCount": 48,
-    "orgName": "Nobu Dubai, restaurant",
-    "branchCount": 1,
-    "url": "https://2gis.ae/dubai/firm/70000001098374512",
-    "searchUrl": "https://2gis.ae/dubai/search/restaurants",
-    "scrapedAt": "2026-02-07T15:21:25.112Z"
-  },
-  {
-    "id": "70000001053892241",
-    "name": "Zuma Dubai, restaurant",
-    "nameExtension": "Zuma Dubai",
-    "address": "Gate Village, Building 6, DIFC",
-    "buildingName": "Gate Village Building 6",
-    "city": "Dubai",
-    "district": "DIFC",
-    "latitude": 25.208034,
-    "longitude": 55.279451,
-    "categories": ["Cafe / Restaurants"],
-    "rating": 4.7,
-    "reviewCount": 184,
-    "schedule": {
-      "Fri": [{ "from": "12:00", "to": "01:00" }],
-      "Mon": [{ "from": "12:00", "to": "00:00" }],
-      "Sat": [{ "from": "12:00", "to": "01:00" }],
-      "Sun": [{ "from": "12:00", "to": "00:00" }],
-      "Thu": [{ "from": "12:00", "to": "01:00" }],
-      "Tue": [{ "from": "12:00", "to": "00:00" }],
-      "Wed": [{ "from": "12:00", "to": "00:00" }]
-    },
-    "attributes": {
-      "Restaurants / Café": [
-        "Average bill 400 AED",
-        "Japanese cuisine",
-        "Alcohol menu",
-        "Live music",
-        "Valet Parking",
-        "Seating capacity 180 people"
-      ],
-      "Payment methods": ["Payment by credit cards", "Cash payment"],
-      "Service Language": ["English", "Arabic"]
-    },
-    "photoCount": 62,
-    "orgName": "Zuma Dubai, restaurant",
-    "branchCount": 3,
-    "url": "https://2gis.ae/dubai/firm/70000001053892241",
-    "searchUrl": "https://2gis.ae/dubai/search/restaurants",
-    "scrapedAt": "2026-02-07T15:21:31.449Z"
-  }
+    {
+        "id": "70000001050755430",
+        "name": "Bilal stom, стоматология",
+        "nameExtension": "Bilal stom",
+        "address": "улица Манаса, 75",
+        "buildingName": null,
+        "city": "Алматы",
+        "district": "Бостандыкский район",
+        "latitude": 43.230147,
+        "longitude": 76.909558,
+        "categories": [
+            "Частные стоматологии"
+        ],
+        "rating": 4.9,
+        "reviewCount": 652,
+        "schedule": {
+            "Fri": [
+                {
+                    "from": "00:00",
+                    "to": "24:00"
+                }
+            ],
+            "Mon": [
+                {
+                    "from": "00:00",
+                    "to": "24:00"
+                }
+            ],
+            "Sat": [
+                {
+                    "from": "00:00",
+                    "to": "24:00"
+                }
+            ],
+            "Sun": [
+                {
+                    "from": "00:00",
+                    "to": "24:00"
+                }
+            ],
+            "Thu": [
+                {
+                    "from": "00:00",
+                    "to": "24:00"
+                }
+            ],
+            "Tue": [
+                {
+                    "from": "00:00",
+                    "to": "24:00"
+                }
+            ],
+            "Wed": [
+                {
+                    "from": "00:00",
+                    "to": "24:00"
+                }
+            ]
+        },
+        "attributes": {
+            "Стоматологические услуги": [
+                "Взрослый стоматолог-хирург",
+                "Взрослый ортодонт",
+                "Взрослый стоматолог-ортопед",
+                "Имплантация",
+                "Взрослый пародонтолог",
+                "Детский стоматолог-терапевт",
+                "Прицельный снимок зуба",
+                "Бесплатная консультация"
+            ],
+            "Способы оплаты": [
+                "Оплата картой",
+                "Наличный расчёт"
+            ]
+        },
+        "photoCount": null,
+        "orgName": "Bilal stom, стоматология",
+        "branchCount": 2,
+        "url": "https://2gis.kz/almaty/firm/70000001050755430",
+        "searchUrl": "https://2gis.kz/almaty/search/%D1%81%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F",
+        "scrapedAt": "2026-09-28T10:53:11.843Z",
+        "phones": [
+            "+77076669892",
+            "+77024375044"
+        ],
+        "emails": [
+            "rizametov.ruslan77@gmail.com"
+        ],
+        "websites": [],
+        "socials": {
+            "instagram": [
+                "https://instagram.com/bilal_stom"
+            ],
+            "whatsapp": [
+                "https://wa.me/77076669892"
+            ]
+        }
+    }
 ]

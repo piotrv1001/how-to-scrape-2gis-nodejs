@@ -1,7 +1,7 @@
 {
   "name": "how-to-scrape-2gis-nodejs",
   "version": "1.0.0",
-  "description": "Example of how to scrape 2GIS business listings in Node.js using the Apify 2GIS Scraper actor",
+  "description": "Node.js example: build a 2GIS lead list with phones, emails, websites and WhatsApp/Telegram links using the Apify 2GIS Scraper actor",
   "type": "module",
   "scripts": {
     "start": "node src/index.js"
